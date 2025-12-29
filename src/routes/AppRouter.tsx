@@ -3,17 +3,18 @@
  * ROLE : Centraliser toutes les routes du projet.
  */
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../presentation/pages/Home';
+import Tasks from '../presentation/pages/Tasks';
+
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Route principale */}
-        <Route path="/" element={<Home />} />
+        {/* On definit le chemin '/' pour afficher notre composant Tasks */}
+        <Route path="/" element={<Tasks />} />
         
         {/* Exemple de route 404 */}
-        <Route path="*" element={<div>Page 404 - Perdu ?</div>} />
+        <Route path="*" element={<div style={{padding:'20px'}}>Page 404 - Perdu ?</div>} />
       </Routes>
     </BrowserRouter>
   );
