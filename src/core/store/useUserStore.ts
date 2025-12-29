@@ -2,6 +2,7 @@
  * FICHIER : useUserStore.ts
  * ROLE : Gérer l'état global de l'utilisateur.
  * NOMENCLATURE : On commence souvent par 'use' car c'est un Hook.
+ * 
  */
 import { create } from 'zustand';
 
