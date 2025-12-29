@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTaskStore } from '../../core/store/useTaskStore';
 import Button from '../../shared/components/Button';
 import styles from './Tasks.module.scss';
+import TaskItem from './components/TaskItem';
 
 const Tasks = () => {
   // État local pour le champ de saisie
@@ -39,18 +40,12 @@ const Tasks = () => {
 
       <ul className={styles.taskList}>
         {tasks.map((task) => (
-          <li key={task.id} className={styles.taskItem}>
-            <span 
-              className={`${styles.taskText} ${task.completed ? styles.completed : ''}`}
-              onClick={() => toggleTask(task.id)}
-            >
-              {task.completed ? '✅ ' : '⏳ '}
-              {task.title}
-            </span>
-            <Button variant="danger" onClick={() => deleteTask(task.id)}>
-              Supprimer
-            </Button>
-          </li>
+          <TaskItem
+            key={task.id}
+            task={task}
+            onToggle={toggleTask}
+            onDelete={deleteTask}
+          />
         ))}
       </ul>
       
