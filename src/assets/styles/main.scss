@@ -1,0 +1,9 @@
+@forward 'utils/variables';
+@forward 'utils/mixins';
+@forward 'base/reset';
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc; // Utilisation directe ou via variable
+  color: #1e293b;
+}
