@@ -1,0 +1,66 @@
+//on importe nos variables globales
+@use "../../assets/styles/utils/variables" as vars;
+
+.container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+    h1{
+        colors: vars.$primary-color;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .inputGroup{
+        display: flex;
+        gap: 12px;
+        margin-bottom: 2rem;
+
+        input {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            outline: none;
+            transition: border-color 0.2s;
+
+            &:focus {
+                border-color: vars.$primary-color;
+            }
+        }
+    }
+
+    .taskList {
+        list-style: none;
+        padding: 0;
+        
+        .taskItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            transition: border-color 0.2s;
+
+            &:hover {
+                background-color:#f8fafc;
+            }
+
+            .taskText {
+                cursor: pointer;
+                flex: 1;
+                font-size: 1.1rem;
+
+                &.completed {
+                    text-decoration: line-through;
+                    color:#94a3b8;
+                }
+            }
+        }
+    }
+}

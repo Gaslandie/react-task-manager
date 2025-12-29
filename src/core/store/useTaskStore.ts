@@ -19,7 +19,7 @@ interface TaskState {
   tasks: Task[];
   addTask: (title: string) => void;
   toggleTask: (id: number) => void;
-  removeTask: (id: number) => void;
+  deleteTask: (id: number) => void;
 }
 
 /**
@@ -45,6 +45,6 @@ export const useTaskStore = create<TaskState>((set) => ({
 
   //Action: supprimer une tache
   //on utilise .filter() pour ne garder que les taches dont l'ID est different de celui à supprimer
-  removeTask: (id: number) =>
+  deleteTask: (id: number) =>
     set((state) => ({ tasks: state.tasks.filter((task) => task.id !== id) })),
 }));
